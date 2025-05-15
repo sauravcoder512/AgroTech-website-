@@ -1,0 +1,46 @@
+/* Custom styles for AgroTech */
+
+/* Marketplace Styles */
+.marketplace-container {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marketplace-card {
+  max-width: 420px;
+}
+
+.marketplace-svg {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Crop Care Styles */
+#drop-area {
+  background: #f8f9fa;
+  cursor: pointer;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.feature-link {
+  text-decoration: none;
+}
+.feature-link:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+.card-3d img.card-img-top, .card-3d .card-img-top {
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+}
+
+.hidden-input {
+  display: none;
+} 

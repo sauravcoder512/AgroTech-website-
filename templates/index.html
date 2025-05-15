@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- 3D Hero Slider -->
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Farming 1"></div>
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Farming 2"></div>
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Farming 3"></div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  });
+</script>
+<!-- 3D Feature Cards -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">Our Key Features</h2>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-3">
+      <div class="card card-3d p-3 h-100 feature-card text-center">
+        <div class="mb-3"><i class="fas fa-seedling fa-2x text-success"></i></div>
+        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Crop Care">
+        <div class="card-body">
+          <h5 class="card-title">Detailed Crop Care</h5>
+          <p class="card-text">Get personalized guidance for your crops at every growth stage with customized care recommendations.</p>
+          <a href="{{ url_for('crop_care') }}" class="text-success fw-bold">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card card-3d p-3 h-100 feature-card text-center">
+        <div class="mb-3"><i class="fas fa-robot fa-2x text-primary"></i></div>
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="AI Assistant">
+        <div class="card-body">
+          <h5 class="card-title">AI Farming Assistant</h5>
+          <p class="card-text">Utilize artificial intelligence to predict crop diseases, optimize irrigation, and boost yields, making farming smarter and more efficient.</p>
+          <a href="#" class="text-success fw-bold">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card card-3d p-3 h-100 feature-card text-center">
+        <div class="mb-3"><i class="fas fa-store fa-2x text-warning"></i></div>
+        <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3fd9?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Marketplace">
+        <div class="card-body">
+          <h5 class="card-title">Farmer's Marketplace</h5>
+          <p class="card-text">Connect directly with buyers and sellers to access and provide agricultural products and services at competitive prices.</p>
+          <a href="{{ url_for('buy_sell') }}" class="text-success fw-bold">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card card-3d p-3 h-100 feature-card text-center">
+        <div class="mb-3"><i class="fas fa-landmark fa-2x text-info"></i></div>
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Schemes">
+        <div class="card-body">
+          <h5 class="card-title">Government Schemes</h5>
+          <p class="card-text">Stay updated on agricultural subsidies, grants, and government programs tailored for farmers, ensuring you never miss out on valuable support.</p>
+          <a href="{{ url_for('schemes') }}" class="text-success fw-bold">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+.feature-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(25,135,84,0.12);
+  z-index: 2;
+}
+</style>
+<!-- 3D Top Picks Section -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">Top Picks for Farmers</h2>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-4">
+      <div class="card card-3d h-100 text-center">
+        <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Organic Bundle">
+        <div class="card-body">
+          <h5 class="card-title">Organic Vegetable Bundle</h5>
+          <p class="card-text">Purchase fresh, locally grown organic vegetables with ease through the marketplace.</p>
+          <a href="{{ url_for('buy_sell') }}" class="btn btn-outline-success">Shop Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-3d h-100 text-center">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Drone Service">
+        <div class="card-body">
+          <h5 class="card-title">Agricultural Drone Service</h5>
+          <p class="card-text">Book drone services for crop monitoring and precision spraying, leveraging the latest in agri-tech for better productivity.</p>
+          <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bookDroneModal">Book Service</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-3d h-100 text-center">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Rice Guide">
+        <div class="card-body">
+          <h5 class="card-title">Rice Cultivation Guide</h5>
+          <p class="card-text">Download comprehensive guides for best practices in rice cultivation, pest management, and disease prevention.</p>
+          <a href="{{ url_for('static', filename='pdf/rice_guide.pdf') }}" class="btn btn-outline-info" download>Download Guide</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Drone Booking Modal -->
+<div class="modal fade" id="bookDroneModal" tabindex="-1" aria-labelledby="bookDroneModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookDroneModalLabel">Book Agricultural Drone Service</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="drone_name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="drone_name" name="drone_name" required>
+          </div>
+          <div class="mb-3">
+            <label for="drone_contact" class="form-label">Contact</label>
+            <input type="text" class="form-control" id="drone_contact" name="drone_contact" required>
+          </div>
+          <div class="mb-3">
+            <label for="drone_location" class="form-label">Field Location</label>
+            <input type="text" class="form-control" id="drone_location" name="drone_location" required>
+          </div>
+          <div class="mb-3">
+            <label for="drone_date" class="form-label">Preferred Date</label>
+            <input type="date" class="form-control" id="drone_date" name="drone_date" required>
+          </div>
+          <div class="mb-3">
+            <label for="drone_service" class="form-label">Service Type</label>
+            <select class="form-select" id="drone_service" name="drone_service" required>
+              <option value="">Choose...</option>
+              <option value="Monitoring">Crop Monitoring</option>
+              <option value="Spraying">Precision Spraying</option>
+              <option value="Both">Both</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Book Now</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %} 

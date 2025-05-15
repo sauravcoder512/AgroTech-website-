@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4 text-center">Marketplace</h2>
+<div class="container">
+  <div class="row g-4 justify-content-center">
+    <!-- Product 1 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4">
+        <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=600&q=80" class="card-img-top rounded-top-4" alt="Organic Vegetable Bundle">
+        <div class="card-body">
+          <span class="badge bg-light text-success mb-2">Marketplace</span>
+          <span class="float-end text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.5
+          </span>
+          <h5 class="card-title fw-bold">Organic Vegetable Bundle</h5>
+          <p class="card-text">Fresh, locally-grown organic vegetables harvested this week. Includes carrots, tomatoes, lettuce and more.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold text-success">₹450 <small class="text-muted">per bundle</small></span>
+            <form method="POST" action="{{ url_for('add_to_cart') }}">
+              <input type="hidden" name="product_id" value="veg_bundle">
+              <button type="submit" class="btn btn-success btn-sm">Add to Cart</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product 2 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" class="card-img-top rounded-top-4" alt="Agricultural Drone Service">
+        <div class="card-body">
+          <span class="badge bg-light text-primary mb-2">Technology</span>
+          <span class="float-end text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4
+          </span>
+          <h5 class="card-title fw-bold">Agricultural Drone Service</h5>
+          <p class="card-text">Aerial crop monitoring and precision spraying service. Book our expert team with state-of-the-art drones.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold text-success">₹2,500 <small class="text-muted">per acre</small></span>
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#bookDroneModal">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product 3 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" class="card-img-top rounded-top-4" alt="Rice Cultivation Guide">
+        <div class="card-body">
+          <span class="badge bg-light text-warning mb-2">Crop Care</span>
+          <span class="float-end text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5
+          </span>
+          <h5 class="card-title fw-bold">Rice Cultivation Guide</h5>
+          <p class="card-text">Complete guide covering soil preparation, water management, disease prevention, and harvesting techniques.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold text-success">Free <small class="text-muted">premium</small></span>
+            <a href="{{ url_for('static', filename='pdf/rice_guide.pdf') }}" class="btn btn-outline-success btn-sm" download>Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product 4 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4">
+        <img src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=600&q=80" class="card-img-top rounded-top-4" alt="Hybrid Seeds Pack">
+        <div class="card-body">
+          <span class="badge bg-light text-info mb-2">Seeds</span>
+          <span class="float-end text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 3.5
+          </span>
+          <h5 class="card-title fw-bold">Hybrid Seeds Pack</h5>
+          <p class="card-text">High-yield hybrid seeds for wheat, rice, and vegetables. Suitable for all climates and soil types.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold text-success">₹120 <small class="text-muted">per pack</small></span>
+            <form method="POST" action="{{ url_for('add_to_cart') }}">
+              <input type="hidden" name="product_id" value="hybrid_seeds">
+              <button type="submit" class="btn btn-success btn-sm">Add to Cart</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product 5 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4">
+        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80" class="card-img-top rounded-top-4" alt="Organic Fertilizer">
+        <div class="card-body">
+          <span class="badge bg-light text-success mb-2">Fertilizer</span>
+          <span class="float-end text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4
+          </span>
+          <h5 class="card-title fw-bold">Organic Fertilizer</h5>
+          <p class="card-text">Eco-friendly fertilizer to boost soil health and crop yield. Safe for all crops and the environment.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold text-success">₹350 <small class="text-muted">per bag</small></span>
+            <form method="POST" action="{{ url_for('add_to_cart') }}">
+              <input type="hidden" name="product_id" value="organic_fertilizer">
+              <button type="submit" class="btn btn-success btn-sm">Add to Cart</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product 6 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4">
+        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=600&q=80" class="card-img-top rounded-top-4" alt="Farm Tools Kit">
+        <div class="card-body">
+          <span class="badge bg-light text-secondary mb-2">Tools</span>
+          <span class="float-end text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 3
+          </span>
+          <h5 class="card-title fw-bold">Farm Tools Kit</h5>
+          <p class="card-text">Essential tools for every farmer: spade, hoe, sickle, and more. Durable and easy to use.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold text-success">₹800 <small class="text-muted">per kit</small></span>
+            <form method="POST" action="{{ url_for('add_to_cart') }}">
+              <input type="hidden" name="product_id" value="tools_kit">
+              <button type="submit" class="btn btn-success btn-sm">Add to Cart</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product 7 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" class="card-img-top rounded-top-4" alt="Weather Insurance">
+        <div class="card-body">
+          <span class="badge bg-light text-info mb-2">Insurance</span>
+          <span class="float-end text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 2.5
+          </span>
+          <h5 class="card-title fw-bold">Weather Insurance</h5>
+          <p class="card-text">Protect your crops from unpredictable weather. Affordable insurance plans for all farm sizes.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold text-success">₹1,200 <small class="text-muted">per year</small></span>
+            <a href="#" class="btn btn-outline-info btn-sm">Get Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-4">
+    <a href="#" class="btn btn-outline-success px-4">View All Picks</a>
+  </div>
+</div>
+
+<!-- Drone Booking Modal -->
+<div class="modal fade" id="bookDroneModal" tabindex="-1" aria-labelledby="bookDroneModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookDroneModalLabel">Book Agricultural Drone Service</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="drone_name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="drone_name" name="drone_name" required>
+          </div>
+          <div class="mb-3">
+            <label for="drone_contact" class="form-label">Contact</label>
+            <input type="text" class="form-control" id="drone_contact" name="drone_contact" required>
+          </div>
+          <div class="mb-3">
+            <label for="drone_location" class="form-label">Field Location</label>
+            <input type="text" class="form-control" id="drone_location" name="drone_location" required>
+          </div>
+          <div class="mb-3">
+            <label for="drone_date" class="form-label">Preferred Date</label>
+            <input type="date" class="form-control" id="drone_date" name="drone_date" required>
+          </div>
+          <div class="mb-3">
+            <label for="drone_service" class="form-label">Service Type</label>
+            <select class="form-select" id="drone_service" name="drone_service" required>
+              <option value="">Choose...</option>
+              <option value="Monitoring">Crop Monitoring</option>
+              <option value="Spraying">Precision Spraying</option>
+              <option value="Both">Both</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Book Now</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %} 
